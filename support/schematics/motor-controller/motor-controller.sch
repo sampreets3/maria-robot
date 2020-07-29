@@ -1,0 +1,607 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Notes 4940 1110 0    50   ~ 0
+An SPI based stepper motor controller \nusing L293D and MCP23S08
+$Comp
+L Interface_Expansion:MCP23S08-xSO U2
+U 1 1 5F1FA7BD
+P 3160 2445
+F 0 "U2" H 2795 2985 50  0000 C CNN
+F 1 "MCP23S08-xSO" H 3480 2990 50  0000 C CNN
+F 2 "Package_SO:SOIC-18W_7.5x11.6mm_P1.27mm" H 3160 1395 50  0001 C CNN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/MCP23008-MCP23S08-Data-Sheet-20001919F.pdf" H 4460 1245 50  0001 C CNN
+	1    3160 2445
+	1    0    0    -1  
+$EndComp
+$Comp
+L Driver_Motor:L293D U3
+U 1 1 5F1FB4F7
+P 5340 2820
+F 0 "U3" H 5700 3785 50  0000 C CNN
+F 1 "L293D" H 4995 3785 50  0000 C CNN
+F 2 "Package_DIP:DIP-16_W7.62mm" H 5590 2070 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/l293.pdf" H 5040 3520 50  0001 C CNN
+	1    5340 2820
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR018
+U 1 1 5F1FD3DE
+P 9505 1170
+F 0 "#PWR018" H 9505 1020 50  0001 C CNN
+F 1 "+3.3V" H 9520 1343 50  0000 C CNN
+F 2 "" H 9505 1170 50  0001 C CNN
+F 3 "" H 9505 1170 50  0001 C CNN
+	1    9505 1170
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 5F1FD96A
+P 3160 3045
+F 0 "#PWR09" H 3160 2795 50  0001 C CNN
+F 1 "GND" H 3165 2872 50  0000 C CNN
+F 2 "" H 3160 3045 50  0001 C CNN
+F 3 "" H 3160 3045 50  0001 C CNN
+	1    3160 3045
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 5F1FE3FD
+P 2615 3045
+F 0 "#PWR07" H 2615 2795 50  0001 C CNN
+F 1 "GND" H 2620 2872 50  0000 C CNN
+F 2 "" H 2615 3045 50  0001 C CNN
+F 3 "" H 2615 3045 50  0001 C CNN
+	1    2615 3045
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2660 2745 2615 2745
+Wire Wire Line
+	2615 2745 2615 2845
+Wire Wire Line
+	2660 2845 2615 2845
+Connection ~ 2615 2845
+Wire Wire Line
+	2615 2845 2615 3045
+$Comp
+L power:VCC #PWR011
+U 1 1 5F1FF4D5
+P 5345 1715
+F 0 "#PWR011" H 5345 1565 50  0001 C CNN
+F 1 "VCC" H 5360 1888 50  0000 C CNN
+F 2 "" H 5345 1715 50  0001 C CNN
+F 3 "" H 5345 1715 50  0001 C CNN
+	1    5345 1715
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5240 1820 5240 1760
+Wire Wire Line
+	5240 1760 5345 1760
+Wire Wire Line
+	5440 1760 5440 1820
+Wire Wire Line
+	5345 1715 5345 1760
+Connection ~ 5345 1760
+Wire Wire Line
+	5345 1760 5440 1760
+Wire Wire Line
+	5140 3620 5140 3685
+Wire Wire Line
+	5140 3685 5240 3685
+Wire Wire Line
+	5240 3685 5240 3620
+Wire Wire Line
+	5440 3620 5440 3685
+Connection ~ 5240 3685
+Wire Wire Line
+	5440 3685 5540 3685
+Wire Wire Line
+	5540 3685 5540 3620
+Connection ~ 5440 3685
+$Comp
+L power:GND #PWR012
+U 1 1 5F200764
+P 5345 3755
+F 0 "#PWR012" H 5345 3505 50  0001 C CNN
+F 1 "GND" H 5350 3582 50  0000 C CNN
+F 2 "" H 5345 3755 50  0001 C CNN
+F 3 "" H 5345 3755 50  0001 C CNN
+	1    5345 3755
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5345 3685 5345 3755
+Wire Wire Line
+	5240 3685 5345 3685
+Connection ~ 5345 3685
+Wire Wire Line
+	5345 3685 5440 3685
+$Comp
+L Connector_Generic:Conn_01x04 J3
+U 1 1 5F201353
+P 9815 2330
+F 0 "J3" H 9895 2322 50  0000 L CNN
+F 1 "Motor_Connector" H 9895 2231 50  0000 L CNN
+F 2 "Connector_JST:JST_EH_S4B-EH_1x04_P2.50mm_Horizontal" H 9815 2330 50  0001 C CNN
+F 3 "~" H 9815 2330 50  0001 C CNN
+	1    9815 2330
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x04 J4
+U 1 1 5F201EE2
+P 9815 2805
+F 0 "J4" H 9895 2797 50  0000 L CNN
+F 1 "Motor_Connector" H 9895 2706 50  0000 L CNN
+F 2 "Connector_JST:JST_EH_S4B-EH_1x04_P2.50mm_Horizontal" H 9815 2805 50  0001 C CNN
+F 3 "~" H 9815 2805 50  0001 C CNN
+	1    9815 2805
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 5F202A38
+P 9805 3620
+F 0 "J1" H 9885 3612 50  0000 L CNN
+F 1 "Power_Connector" H 9885 3521 50  0000 L CNN
+F 2 "Connector_JST:JST_EH_S2B-EH_1x02_P2.50mm_Horizontal" H 9805 3620 50  0001 C CNN
+F 3 "~" H 9805 3620 50  0001 C CNN
+	1    9805 3620
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x06 J2
+U 1 1 5F203BA1
+P 9815 1435
+F 0 "J2" H 9895 1427 50  0000 L CNN
+F 1 "SPI_Connector" H 9895 1336 50  0000 L CNN
+F 2 "Connector_JST:JST_EH_S6B-EH_1x06_P2.50mm_Horizontal" H 9815 1435 50  0001 C CNN
+F 3 "~" H 9815 1435 50  0001 C CNN
+	1    9815 1435
+	1    0    0    -1  
+$EndComp
+$Comp
+L Regulator_Linear:AMS1117-5.0 U1
+U 1 1 5F209835
+P 1265 5470
+F 0 "U1" H 1265 5712 50  0000 C CNN
+F 1 "AMS1117-5.0" H 1265 5621 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-223-3_TabPin2" H 1265 5670 50  0001 C CNN
+F 3 "http://www.advanced-monolithic.com/pdf/ds1117.pdf" H 1365 5220 50  0001 C CNN
+	1    1265 5470
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR08
+U 1 1 5F20ACF9
+P 3160 1845
+F 0 "#PWR08" H 3160 1695 50  0001 C CNN
+F 1 "+3.3V" H 3175 2018 50  0000 C CNN
+F 2 "" H 3160 1845 50  0001 C CNN
+F 3 "" H 3160 1845 50  0001 C CNN
+	1    3160 1845
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9615 1235 9505 1235
+Wire Wire Line
+	9505 1235 9505 1170
+$Comp
+L power:GND #PWR019
+U 1 1 5F20C9AB
+P 9505 1825
+F 0 "#PWR019" H 9505 1575 50  0001 C CNN
+F 1 "GND" H 9510 1652 50  0000 C CNN
+F 2 "" H 9505 1825 50  0001 C CNN
+F 3 "" H 9505 1825 50  0001 C CNN
+	1    9505 1825
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9615 1735 9505 1735
+Wire Wire Line
+	9505 1735 9505 1825
+$Comp
+L power:GND #PWR017
+U 1 1 5F2180CA
+P 9500 3820
+F 0 "#PWR017" H 9500 3570 50  0001 C CNN
+F 1 "GND" H 9505 3647 50  0000 C CNN
+F 2 "" H 9500 3820 50  0001 C CNN
+F 3 "" H 9500 3820 50  0001 C CNN
+	1    9500 3820
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9605 3720 9500 3720
+Wire Wire Line
+	9500 3720 9500 3820
+$Comp
+L power:VCC #PWR016
+U 1 1 5F218BBE
+P 9500 3565
+F 0 "#PWR016" H 9500 3415 50  0001 C CNN
+F 1 "VCC" H 9515 3738 50  0000 C CNN
+F 2 "" H 9500 3565 50  0001 C CNN
+F 3 "" H 9500 3565 50  0001 C CNN
+	1    9500 3565
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9605 3620 9500 3620
+Wire Wire Line
+	9500 3620 9500 3565
+$Comp
+L Device:C_Small C1
+U 1 1 5F21AE53
+P 1725 5670
+F 0 "C1" H 1817 5716 50  0000 L CNN
+F 1 "22uF" H 1817 5625 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-2012-15_AVX-P_Pad1.30x1.05mm_HandSolder" H 1725 5670 50  0001 C CNN
+F 3 "~" H 1725 5670 50  0001 C CNN
+	1    1725 5670
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_Small D1
+U 1 1 5F21B7D4
+P 2070 5470
+F 0 "D1" H 2070 5263 50  0000 C CNN
+F 1 "LED_Small" H 2070 5354 50  0000 C CNN
+F 2 "LED_SMD:LED_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2070 5470 50  0001 C CNN
+F 3 "~" V 2070 5470 50  0001 C CNN
+	1    2070 5470
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small R1
+U 1 1 5F21C6B8
+P 2360 5670
+F 0 "R1" H 2419 5716 50  0000 L CNN
+F 1 "330" H 2419 5625 50  0000 L CNN
+F 2 "Resistor_SMD:R_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 2360 5670 50  0001 C CNN
+F 3 "~" H 2360 5670 50  0001 C CNN
+	1    2360 5670
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR06
+U 1 1 5F21CCCE
+P 2360 5770
+F 0 "#PWR06" H 2360 5520 50  0001 C CNN
+F 1 "GND" H 2365 5597 50  0000 C CNN
+F 2 "" H 2360 5770 50  0001 C CNN
+F 3 "" H 2360 5770 50  0001 C CNN
+	1    2360 5770
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5F21D9B7
+P 1725 5770
+F 0 "#PWR04" H 1725 5520 50  0001 C CNN
+F 1 "GND" H 1730 5597 50  0000 C CNN
+F 2 "" H 1725 5770 50  0001 C CNN
+F 3 "" H 1725 5770 50  0001 C CNN
+	1    1725 5770
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5F21E715
+P 1265 5770
+F 0 "#PWR02" H 1265 5520 50  0001 C CNN
+F 1 "GND" H 1270 5597 50  0000 C CNN
+F 2 "" H 1265 5770 50  0001 C CNN
+F 3 "" H 1265 5770 50  0001 C CNN
+	1    1265 5770
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1565 5470 1725 5470
+Wire Wire Line
+	1725 5470 1725 5570
+Wire Wire Line
+	1970 5470 1725 5470
+Connection ~ 1725 5470
+Wire Wire Line
+	2170 5470 2360 5470
+Wire Wire Line
+	2360 5470 2360 5570
+$Comp
+L power:VCC #PWR01
+U 1 1 5F220CDF
+P 800 5420
+F 0 "#PWR01" H 800 5270 50  0001 C CNN
+F 1 "VCC" H 815 5593 50  0000 C CNN
+F 2 "" H 800 5420 50  0001 C CNN
+F 3 "" H 800 5420 50  0001 C CNN
+	1    800  5420
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	965  5470 800  5470
+Wire Wire Line
+	800  5470 800  5420
+$Comp
+L power:+5V #PWR03
+U 1 1 5F2222ED
+P 1725 5405
+F 0 "#PWR03" H 1725 5255 50  0001 C CNN
+F 1 "+5V" H 1740 5578 50  0000 C CNN
+F 2 "" H 1725 5405 50  0001 C CNN
+F 3 "" H 1725 5405 50  0001 C CNN
+	1    1725 5405
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1725 5405 1725 5470
+$Comp
+L power:+5V #PWR010
+U 1 1 5F2236C3
+P 4540 2585
+F 0 "#PWR010" H 4540 2435 50  0001 C CNN
+F 1 "+5V" H 4540 2725 50  0000 C CNN
+F 2 "" H 4540 2585 50  0001 C CNN
+F 3 "" H 4540 2585 50  0001 C CNN
+	1    4540 2585
+	1    0    0    -1  
+$EndComp
+Text GLabel 3660 2045 2    50   Input ~ 0
+GP0
+Text GLabel 3660 2145 2    50   Input ~ 0
+GP1
+Text GLabel 3660 2245 2    50   Input ~ 0
+GP2
+Text GLabel 3660 2345 2    50   Input ~ 0
+GP3
+Text GLabel 3660 2445 2    50   Input ~ 0
+GP4
+Text GLabel 3660 2545 2    50   Input ~ 0
+GP5
+Text GLabel 3660 2645 2    50   Input ~ 0
+GP6
+Text GLabel 3660 2745 2    50   Input ~ 0
+GP7
+Text GLabel 4840 2220 0    50   Input ~ 0
+GP0
+Text GLabel 4840 2420 0    50   Input ~ 0
+GP1
+Wire Wire Line
+	4840 2620 4540 2620
+Wire Wire Line
+	4540 2620 4540 2585
+Wire Wire Line
+	4540 3220 4540 2620
+Wire Wire Line
+	4540 3220 4840 3220
+Connection ~ 4540 2620
+Text GLabel 4840 2820 0    50   Input ~ 0
+GP2
+Text GLabel 4840 3020 0    50   Input ~ 0
+GP3
+Text GLabel 5840 2220 2    50   Output ~ 0
+M1A
+Text GLabel 5840 2420 2    50   Output ~ 0
+M1B
+Text GLabel 5840 2820 2    50   Output ~ 0
+M1C
+Text GLabel 5840 3020 2    50   Output ~ 0
+M1D
+Text GLabel 9615 2230 0    50   Input ~ 0
+M1A
+Text GLabel 9615 2330 0    50   Input ~ 0
+M1B
+Text GLabel 9615 2430 0    50   Input ~ 0
+M1C
+Text GLabel 9615 2530 0    50   Input ~ 0
+M1D
+Text GLabel 2660 1995 0    50   Input ~ 0
+SCK
+Text GLabel 2660 2095 0    50   Input ~ 0
+MOSI
+Text GLabel 2660 2195 0    50   Input ~ 0
+MISO
+Text GLabel 2660 2295 0    50   Input ~ 0
+CS
+NoConn ~ 2660 2445
+$Comp
+L power:+3.3V #PWR05
+U 1 1 5F22B5D1
+P 2265 2425
+F 0 "#PWR05" H 2265 2275 50  0001 C CNN
+F 1 "+3.3V" H 2280 2598 50  0000 C CNN
+F 2 "" H 2265 2425 50  0001 C CNN
+F 3 "" H 2265 2425 50  0001 C CNN
+	1    2265 2425
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2660 2545 2265 2545
+Wire Wire Line
+	2265 2545 2265 2425
+Text GLabel 9615 1335 0    50   Input ~ 0
+SCK
+Text GLabel 9615 1435 0    50   Input ~ 0
+MOSI
+Text GLabel 9615 1535 0    50   Input ~ 0
+MISO
+Text GLabel 9615 1635 0    50   Input ~ 0
+CS
+Text GLabel 9615 2705 0    50   Input ~ 0
+M2A
+Text GLabel 9615 2805 0    50   Input ~ 0
+M2B
+Text GLabel 9615 2905 0    50   Input ~ 0
+M2C
+Text GLabel 9615 3005 0    50   Input ~ 0
+M2D
+$Comp
+L Driver_Motor:L293D U4
+U 1 1 5F236EFC
+P 7210 2840
+F 0 "U4" H 7570 3805 50  0000 C CNN
+F 1 "L293D" H 6865 3805 50  0000 C CNN
+F 2 "Package_DIP:DIP-16_W7.62mm" H 7460 2090 50  0001 L CNN
+F 3 "http://www.ti.com/lit/ds/symlink/l293.pdf" H 6910 3540 50  0001 C CNN
+	1    7210 2840
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR014
+U 1 1 5F236F02
+P 7215 1735
+F 0 "#PWR014" H 7215 1585 50  0001 C CNN
+F 1 "VCC" H 7230 1908 50  0000 C CNN
+F 2 "" H 7215 1735 50  0001 C CNN
+F 3 "" H 7215 1735 50  0001 C CNN
+	1    7215 1735
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7110 1840 7110 1780
+Wire Wire Line
+	7110 1780 7215 1780
+Wire Wire Line
+	7310 1780 7310 1840
+Wire Wire Line
+	7215 1735 7215 1780
+Connection ~ 7215 1780
+Wire Wire Line
+	7215 1780 7310 1780
+Wire Wire Line
+	7010 3640 7010 3705
+Wire Wire Line
+	7010 3705 7110 3705
+Wire Wire Line
+	7110 3705 7110 3640
+Wire Wire Line
+	7310 3640 7310 3705
+Connection ~ 7110 3705
+Wire Wire Line
+	7310 3705 7410 3705
+Wire Wire Line
+	7410 3705 7410 3640
+Connection ~ 7310 3705
+$Comp
+L power:GND #PWR015
+U 1 1 5F236F16
+P 7215 3775
+F 0 "#PWR015" H 7215 3525 50  0001 C CNN
+F 1 "GND" H 7220 3602 50  0000 C CNN
+F 2 "" H 7215 3775 50  0001 C CNN
+F 3 "" H 7215 3775 50  0001 C CNN
+	1    7215 3775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7215 3705 7215 3775
+Wire Wire Line
+	7110 3705 7215 3705
+Connection ~ 7215 3705
+Wire Wire Line
+	7215 3705 7310 3705
+$Comp
+L power:+5V #PWR013
+U 1 1 5F236F20
+P 6410 2605
+F 0 "#PWR013" H 6410 2455 50  0001 C CNN
+F 1 "+5V" H 6410 2745 50  0000 C CNN
+F 2 "" H 6410 2605 50  0001 C CNN
+F 3 "" H 6410 2605 50  0001 C CNN
+	1    6410 2605
+	1    0    0    -1  
+$EndComp
+Text GLabel 6710 2240 0    50   Input ~ 0
+GP4
+Text GLabel 6710 2440 0    50   Input ~ 0
+GP5
+Wire Wire Line
+	6710 2640 6410 2640
+Wire Wire Line
+	6410 2640 6410 2605
+Wire Wire Line
+	6410 3240 6410 2640
+Wire Wire Line
+	6410 3240 6710 3240
+Connection ~ 6410 2640
+Text GLabel 6710 2840 0    50   Input ~ 0
+GP6
+Text GLabel 6710 3040 0    50   Input ~ 0
+GP7
+Text GLabel 7710 2240 2    50   Output ~ 0
+M2A
+Text GLabel 7710 2440 2    50   Output ~ 0
+M2B
+Text GLabel 7710 2840 2    50   Output ~ 0
+M2C
+Text GLabel 7710 3040 2    50   Output ~ 0
+M2D
+Text Notes 570  5180 0    50   Italic 0
+NOTE: VCC not \nto exceed 15V\n
+Text Notes 1600 6260 0    50   Italic 0
+NOTE: Use\nTantalum\nCapacitor
+Text Notes 9320 935  0    50   Italic 0
+NOTE: SPI Connector will\nalso provide the +3.3Volts \npower for the MCP23S08
+$Comp
+L Mechanical:MountingHole H3
+U 1 1 5F241815
+P 4300 5095
+F 0 "H3" H 4400 5141 50  0000 L CNN
+F 1 "MountingHole" H 4400 5050 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 4300 5095 50  0001 C CNN
+F 3 "~" H 4300 5095 50  0001 C CNN
+	1    4300 5095
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H4
+U 1 1 5F241C22
+P 4300 5275
+F 0 "H4" H 4400 5321 50  0000 L CNN
+F 1 "MountingHole" H 4400 5230 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 4300 5275 50  0001 C CNN
+F 3 "~" H 4300 5275 50  0001 C CNN
+	1    4300 5275
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H1
+U 1 1 5F241E63
+P 4290 5465
+F 0 "H1" H 4390 5511 50  0000 L CNN
+F 1 "MountingHole" H 4390 5420 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 4290 5465 50  0001 C CNN
+F 3 "~" H 4290 5465 50  0001 C CNN
+	1    4290 5465
+	1    0    0    -1  
+$EndComp
+$Comp
+L Mechanical:MountingHole H2
+U 1 1 5F242100
+P 4290 5665
+F 0 "H2" H 4390 5711 50  0000 L CNN
+F 1 "MountingHole" H 4390 5620 50  0000 L CNN
+F 2 "MountingHole:MountingHole_2.2mm_M2" H 4290 5665 50  0001 C CNN
+F 3 "~" H 4290 5665 50  0001 C CNN
+	1    4290 5665
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
