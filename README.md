@@ -1,7 +1,8 @@
-[![GitHub issues open](https://img.shields.io/github/issues/network-tools/shconfparser.svg?maxAge=2592)](https://github.com/network-tools/shconfparser/issues)
+[![GitHub issues open](https://img.shields.io/github/issues/network-tools/shconfparser.svg?maxAge=2592)](https://github.com/sampreets3/maria-robot/issues)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Generic badge](https://img.shields.io/badge/Maintained-Yes-red.svg)](https://shields.io/)
 # maria-robot
+
 MARIA is a simple robot which will help me understand how to design the systems of a complex robot. Features will be mentioned as they are added.
 The organization of the project is divided into three main components: The ROS workspace, the necessary resources *(books, papers, etc.)* and any supporting material. This may include a lot of things such as the electrical schematics and board layouts for several boards, the CAD models, the PCB fabrication files, and so on.
 ---
