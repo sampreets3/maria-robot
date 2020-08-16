@@ -29,6 +29,14 @@ Then onwards, most of the development will focus on the ROS side of things, like
 [![support-schematic](https://img.shields.io/badge/schematic-support-blue.svg)](https://shields.io/)
 **Added schematics for STM32 base board.** This board is going to be responsible for processing sensor data, sending commands to the motor controller, and in later stages, communicating with the SBC running ROS. Need to finish the layout of the board.
 
+<!-- BADGES FOR UPDATE STATUS-->
+<!-- Used to indicate what kind of work was updated-->
+<!-- The general rule of thumb is to make it understandable. So, we can use any sort of indicator of what it was. -->
+<!-- For instance, I had updated the schematics in the support section, so I added the badge as "schematic - support" -->
+<!-- You can make your badge from this generic badge tag : [![Generic badge](https://img.shields.io/badge/<SUBJECT>-<STATUS>-<COLOR>.svg)](https://shields.io/) -->
+<!-- Just change the <SUBJECT>, <STATUS>, and <COLOR> fields to appropriate values -->
+<!-- Ideally, use blue for electrical schematics/layout, red for code updates, and other colors as per need -->
+
 ---
 
 ## Usage
