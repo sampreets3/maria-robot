@@ -23,11 +23,9 @@ Then onwards, most of the development will focus on the ROS side of things, like
 ---
 
 ## Updates
- - [![Date-Aug16](https://img.shields.io/badge/Aug 16-2020-blue.svg)](https://shields.io/)
-  **Updated the Motor Controller Schematic.** Refined the design a little bit. The AMS1117 LDOs use the copper plane as a heatsink, as was pointed out by Mr. Petr Dvořák. Thus, I created two copper planes, one for 3.3V and another for 5V, for the heat to dissipate. Also, I had overlooked the use of decoupling capacitors in the design. Added them close to the ICs.
+[![Date-Aug16](https://img.shields.io/badge/Aug 16-2020-blue.svg)](https://shields.io/)**Updated the Motor Controller Schematic.** Refined the design a little bit. The AMS1117 LDOs use the copper plane as a heatsink, as was pointed out by Mr. Petr Dvořák. Thus, I created two copper planes, one for 3.3V and another for 5V, for the heat to dissipate. Also, I had overlooked the use of decoupling capacitors in the design. Added them close to the ICs.
 
- - [![Date-Aug16](https://img.shields.io/badge/Aug 16-2020-blue.svg)](https://shields.io/)
-  **Added schematics for STM32 base board.** This board is going to be responsible for processing sensor data, sending commands to the motor controller, and in later stages, communicating with the SBC running ROS. Need to finish the layout of the board.
+[![Date-Aug16](https://img.shields.io/badge/Aug 16-2020-blue.svg)](https://shields.io/)**Added schematics for STM32 base board.** This board is going to be responsible for processing sensor data, sending commands to the motor controller, and in later stages, communicating with the SBC running ROS. Need to finish the layout of the board.
 
 ---
 
