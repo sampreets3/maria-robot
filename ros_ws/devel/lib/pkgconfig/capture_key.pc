@@ -1,0 +1,8 @@
+prefix=/home/sampreets3/GitHub/maria-robot/ros_ws/devel
+
+Name: capture_key
+Description: Description of capture_key
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
