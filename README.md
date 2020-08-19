@@ -31,7 +31,10 @@ Then onwards, most of the development will focus on the ROS side of things, like
 **Added schematics for STM32 base board.** This board is going to be responsible for processing sensor data, sending commands to the motor controller, and in later stages, communicating with the SBC running ROS. Need to finish the layout of the board.
 
 [![resource-legacy-code](https://img.shields.io/badge/resource-legacy-red.svg)](https://shields.io/)
-**Added the legacy files and libraries for the original MARIA design.** MARIA was originally developed during my time at The Neotia University, India. Added the old files and libraries for reference or if someone from the old team would need support. The old architecture was based off an Arduino Uno, so you will mainly find Arduino codes, a MARIA library containing essential functionalities. 
+**Added the legacy files and libraries for the original MARIA design.** MARIA was originally developed during my time at The Neotia University, India. Added the old files and libraries for reference or if someone from the old team would need support. The old architecture was based off an Arduino Uno, so you will mainly find Arduino codes, a MARIA library containing essential functionalities.
+
+[![ros-ws-update](https://img.shields.io/badge/ros-workspace-red.svg)](https://shields.io/)
+**Added the main ROS workspace for the robot.** Configured it with a simple chatter application under a package named "comm". Currently hosts two executables, "talker" and "listener". Maybe I will add the build directories to .gitignore
 
 <!-- BADGES FOR UPDATE STATUS-->
 <!-- Used to indicate what kind of work was updated-->
