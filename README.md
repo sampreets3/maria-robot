@@ -54,4 +54,4 @@ If you are interested in contributing to this project, be my guest!
 
 You can reach out to me via email at : `sampreets3@gmail.com`
 
-[![HitCount](http://hits.dwyl.com/sampreets3/maria-robot.svg)](http://hits.dwyl.com/sampreets3/maria-robot)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=sampreets3.maria-robot)

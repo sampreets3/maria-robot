@@ -1,0 +1,2 @@
+comm
+-DCATKIN_DEVEL_PREFIX=/home/sampreets3/GitHub/maria-robot/ros_ws/devel -DCMAKE_INSTALL_PREFIX=/home/sampreets3/GitHub/maria-robot/ros_ws/install -G Unix Makefiles
