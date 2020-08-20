@@ -1,4 +1,4 @@
-[![GitHub issues open](https://img.shields.io/github/issues/network-tools/shconfparser.svg?maxAge=2592)](https://github.com/sampreets3/maria-robot/issues)
+[![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/sampreets3/maria-robot/issues/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
@@ -23,6 +23,8 @@ Then onwards, most of the development will focus on the ROS side of things, like
 
 ---
 
+
+
 ## Updates
 [![support-schematic](https://img.shields.io/badge/schematic-support-blue.svg)](https://shields.io/)
 **Updated the Motor Controller Schematic.** Refined the design a little bit. The AMS1117 LDOs use the copper plane as a heatsink, as was pointed out by Mr. Petr Dvořák. Thus, I created two copper planes, one for 3.3V and another for 5V, for the heat to dissipate. Also, I had overlooked the use of decoupling capacitors in the design. Added them close to the ICs.
@@ -30,6 +32,11 @@ Then onwards, most of the development will focus on the ROS side of things, like
 [![support-schematic](https://img.shields.io/badge/schematic-support-blue.svg)](https://shields.io/)
 **Added schematics for STM32 base board.** This board is going to be responsible for processing sensor data, sending commands to the motor controller, and in later stages, communicating with the SBC running ROS. Need to finish the layout of the board.
 
+[![resource-legacy-code](https://img.shields.io/badge/resource-legacy-red.svg)](https://shields.io/)
+**Added the legacy files and libraries for the original MARIA design.** MARIA was originally developed during my time at The Neotia University, India. Added the old files and libraries for reference or if someone from the old team would need support. The old architecture was based off an Arduino Uno, so you will mainly find Arduino codes, a MARIA library containing essential functionalities.
+
+[![ros-ws-update](https://img.shields.io/badge/ros-workspace-red.svg)](https://shields.io/)
+**Added the main ROS workspace for the robot.** Configured it with a simple chatter application under a package named "comm". Currently hosts two executables, "talker" and "listener". Maybe I will add the build directories to .gitignore
 
 <!-- BADGES FOR UPDATE STATUS-->
 <!-- Used to indicate what kind of work was updated-->
