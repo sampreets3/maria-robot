@@ -1,4 +1,4 @@
-[![GitHub issues open](https://img.shields.io/github/issues/network-tools/shconfparser.svg?maxAge=2592)](https://github.com/sampreets3/maria-robot/issues)
+[![GitHub issues](https://img.shields.io/github/issues/Naereen/StrapDown.js.svg)](https://github.com/sampreets3/maria-robot/issues/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 [![Open Source Love svg3](https://badges.frapsoft.com/os/v3/open-source.svg?v=103)](https://github.com/ellerbrock/open-source-badges/)
@@ -22,6 +22,8 @@ With the electronics design done and the low level drivers tested, I will then f
 Then onwards, most of the development will focus on the ROS side of things, like using a vision system, introducing some simple AI into it, etc. I will revisit the electronics designs only if I feel the need of extra sensors, or something goes wrong.
 
 ---
+
+
 
 ## Updates
 [![support-schematic](https://img.shields.io/badge/schematic-support-blue.svg)](https://shields.io/)

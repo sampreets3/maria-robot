@@ -796,8 +796,8 @@ Text GLabel 5415 5500 2    50   Input ~ 0
 PA10
 Text GLabel 5575 5800 2    50   Input ~ 0
 SWDIO
-Text GLabel 5561 5900 2    50   Input ~ 0
-SWCLK
+Text GLabel 5510 5900 2    50   Input ~ 0
+SWDCLK
 Text GLabel 5415 6000 2    50   Input ~ 0
 PA15
 $Comp
@@ -918,7 +918,7 @@ U 1 1 5F1CBAF5
 P 7605 3395
 F 0 "J3" H 7523 2970 50  0000 C CNN
 F 1 "SWDebugger" H 7523 3061 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Horizontal" H 7605 3395 50  0001 C CNN
+F 2 "Connector_PinSocket_2.54mm:PinSocket_1x04_P2.54mm_Vertical" H 7605 3395 50  0001 C CNN
 F 3 "~" H 7605 3395 50  0001 C CNN
 	1    7605 3395
 	-1   0    0    1   
@@ -976,8 +976,6 @@ Wire Wire Line
 Connection ~ 8285 3195
 Wire Wire Line
 	5575 5800 5415 5800
-Wire Wire Line
-	5415 5900 5561 5900
 $Comp
 L Connector_Generic:Conn_01x02 J4
 U 1 1 5F22CBF8
@@ -1398,20 +1396,105 @@ Wire Notes Line
 Text Notes 9050 2615 0    50   Italic 0
 For external power input
 Wire Notes Line
-	7275 3905 10875 3905
-Wire Notes Line
-	10875 3905 10875 820 
-Wire Notes Line
 	10875 820  7275 820 
-Wire Notes Line
-	7275 820  7275 3905
 Text Notes 7275 820  0    59   ~ 12
 CONNECTORS
-Text Notes 7280 4300 0    39   Italic 0
+Text Notes 7255 5295 0    39   Italic 0
 TODO:\n1/ Add MPU6050 sensor(check for SPI comm)\n2/ Add data logging capability\n3/ Maybe need more sensors
 Text Notes 9985 1420 0    39   Italic 0
 Note: All resistors for SPI \nare 33R
 NoConn ~ 9195 3660
 Text Notes 7365 7525 0    98   Italic 20
 ROBOT BASE BOARD
+Wire Wire Line
+	5510 5900 5415 5900
+$Comp
+L Connector_Generic:Conn_01x04 J9
+U 1 1 5F43A4B7
+P 7605 4265
+F 0 "J9" H 7523 3840 50  0000 C CNN
+F 1 "SPI_Connector" H 7523 3931 50  0000 C CNN
+F 2 "Connector_JST:JST_EH_S4B-EH_1x04_P2.50mm_Horizontal" H 7605 4265 50  0001 C CNN
+F 3 "~" H 7605 4265 50  0001 C CNN
+	1    7605 4265
+	-1   0    0    1   
+$EndComp
+Text GLabel 8155 4165 2    50   Input ~ 0
+MISO
+Text GLabel 8155 4265 2    50   Input ~ 0
+MOSI
+Text GLabel 8180 4365 2    50   Input ~ 0
+SCK
+Text GLabel 8180 4065 2    50   Input ~ 0
+NCS2
+$Comp
+L Device:R_Small R13
+U 1 1 5F43A4C1
+P 7980 4065
+F 0 "R13" V 7970 3320 50  0001 C CNN
+F 1 "20" V 7970 3495 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 7980 4065 50  0001 C CNN
+F 3 "~" H 7980 4065 50  0001 C CNN
+	1    7980 4065
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R14
+U 1 1 5F43A4C7
+P 7980 4165
+F 0 "R14" V 7630 4240 50  0001 C CNN
+F 1 "20" V 7630 4340 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 7980 4165 50  0001 C CNN
+F 3 "~" H 7980 4165 50  0001 C CNN
+	1    7980 4165
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R15
+U 1 1 5F43A4CD
+P 7980 4265
+F 0 "R15" V 7605 4340 50  0001 C CNN
+F 1 "20" V 7605 4440 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 7980 4265 50  0001 C CNN
+F 3 "~" H 7980 4265 50  0001 C CNN
+	1    7980 4265
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R16
+U 1 1 5F43A4D3
+P 7980 4365
+F 0 "R16" V 7580 4440 50  0001 C CNN
+F 1 "20" V 7580 4540 50  0001 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric" H 7980 4365 50  0001 C CNN
+F 3 "~" H 7980 4365 50  0001 C CNN
+	1    7980 4365
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8180 4065 8080 4065
+Wire Wire Line
+	7880 4065 7805 4065
+Wire Wire Line
+	8155 4165 8080 4165
+Wire Wire Line
+	7880 4165 7805 4165
+Wire Wire Line
+	8155 4265 8080 4265
+Wire Wire Line
+	7880 4265 7805 4265
+Wire Wire Line
+	8180 4365 8080 4365
+Wire Wire Line
+	7880 4365 7805 4365
+Text Notes 7515 4525 0    50   Italic 0
+For SPI communication with other devices
+Text Notes 8425 4260 0    39   Italic 0
+Note: All resistors for SPI \nare 33R
+Wire Notes Line
+	7275 4610 10875 4610
+Wire Notes Line
+	10875 820  10875 4610
+Wire Notes Line
+	7275 820  7275 4610
 $EndSCHEMATC
