@@ -1,8 +1,0 @@
-prefix=/home/sampreets3/GitHub/maria-robot/ros_ws/install
-
-Name: comm
-Description: Description of comm
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

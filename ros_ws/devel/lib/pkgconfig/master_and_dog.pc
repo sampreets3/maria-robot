@@ -1,8 +1,0 @@
-prefix=/home/sampreets3/GitHub/maria-robot/ros_ws/devel
-
-Name: master_and_dog
-Description: Description of master_and_dog
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 
