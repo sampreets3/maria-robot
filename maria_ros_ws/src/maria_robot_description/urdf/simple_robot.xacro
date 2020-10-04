@@ -1,51 +1,69 @@
 <?xml version="1.0" ?>
 <robot name="simple_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
-  <!-- Material colour definitions -->
+
   <material name="black">
     <color rgba="0.0 0.0 0.0 1.0"/>
   </material>
+
   <material name="grey">
     <color rgba="0.2 0.2 0.2 1.0"/>
   </material>
+
   <material name="orange">
-    <color rgba="1.0 0.423529411765 0.0392156862745 1.0"/>
+    <color rgba="1.0 0.42 0.03 1.0"/>
   </material>
 
-<!--
   <gazebo reference="link_chassis">
     <material>Gazebo/Orange</material>
   </gazebo>
+
   <gazebo reference="link_left_wheel">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Grey</material>
   </gazebo>
+
   <gazebo reference="link_right_wheel">
-    <material>Gazebo/Blue</material>
+    <material>Gazebo/Grey</material>
   </gazebo>
 
   <gazebo>
-    <plugin filename="libgazebo_ros_diff_drive.so" name="differential_drive_controller">
-      <legacyMode>false</legacyMode>
-      <alwaysOn>true</alwaysOn>
-      <updateRate>20</updateRate>
-      <leftJoint>joint_left_wheel</leftJoint>
-      <rightJoint>joint_right_wheel</rightJoint>
-      <wheelSeparation>0.2</wheelSeparation>
-      <wheelDiameter>0.2</wheelDiameter>
-      <torque>0.1</torque>
-      <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
-      <odometryFrame>odom</odometryFrame>
-      <robotBaseFrame>link_chassis</robotBaseFrame>
+      <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+        <legacyMode>false</legacyMode>
+        <alwaysOn>true</alwaysOn>
+        <updateRate>10</updateRate>
+        <leftJoint>joint_left_wheel</leftJoint>
+        <rightJoint>joint_right_wheel</rightJoint>
+        <wheelSeparation>0.5</wheelSeparation>
+        <wheelDiameter>0.2</wheelDiameter>
+        <torque>10</torque>
+        <commandTopic>cmd_vel</commandTopic>
+        <odometryTopic>odom</odometryTopic>
+        <odometryFrame>odom</odometryFrame>
+        <robotBaseFrame>link_chassis</robotBaseFrame>
+        <publishWheelTF>true</publishWheelTF>
+        <publishOdom>true</publishOdom>
+        <publishWheelJointState>true</publishWheelJointState>
+      </plugin>
+    </gazebo>
+
+    <gazebo reference="display_screen_link">
+  <visual>
+    <plugin name="display_video_controller" filename="libgazebo_ros_video.so">
+      <topicName>image</topicName>
+      <height>120</height>
+      <width>160</width>
     </plugin>
-  </gazebo>
--->
+  </visual>
+</gazebo>
+
   <link name="link_chassis">
     <!-- pose and inertial -->
     <pose>0 0 0.1 0 0 0</pose>
     <inertial>
       <mass value="5"/>
       <origin rpy="0 0 0" xyz="0 0 0.15"/>
-      <inertia ixx="0.03954167" ixy="0" ixz="0" iyy="0.10620833" iyz="0" izz="0.10620833"/>
+      <inertia ixx="0.03954167" ixy="0" ixz="0"
+               iyy="0.10620833" iyz="0"
+               izz="0.10620833"/>
     </inertial>
     <!-- body -->
     <collision name="collision_chassis">
@@ -107,15 +125,6 @@
     </visual>
   </link>
 
-  <joint name="joint_right_wheel" type="continuous">
-    <origin rpy="0 0 0" xyz="-0.15 0.175 0"/>
-    <child link="link_right_wheel"/>
-    <parent link="link_chassis"/>
-    <axis rpy="0 0 0" xyz="0 1 0"/>
-    <limit effort="10000" velocity="1000"/>
-    <joint_properties damping="1.0" friction="1.0"/>
-  </joint>
-
   <link name="link_left_wheel">
     <inertial>
       <mass value="0.2"/>
@@ -137,6 +146,15 @@
     </visual>
   </link>
 
+  <joint name="joint_right_wheel" type="continuous">
+    <origin rpy="0 0 0" xyz="-0.15 0.175 0"/>
+    <child link="link_right_wheel"/>
+    <parent link="link_chassis"/>
+    <axis rpy="0 0 0" xyz="0 1 0"/>
+    <limit effort="10000" velocity="1000"/>
+    <joint_properties damping="1.0" friction="1.0"/>
+  </joint>
+
   <joint name="joint_left_wheel" type="continuous">
     <origin rpy="0 0 0" xyz="-0.15 -0.175 0"/>
     <child link="link_left_wheel"/>
@@ -145,4 +163,5 @@
     <limit effort="10000" velocity="1000"/>
     <joint_properties damping="1.0" friction="1.0"/>
   </joint>
+
 </robot>

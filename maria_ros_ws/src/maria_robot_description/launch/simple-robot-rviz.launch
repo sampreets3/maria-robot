@@ -3,14 +3,16 @@
 
   <param name="robot_description" command="cat '$(find maria_robot_description)/urdf/simple_robot.xacro'"/>
 
-  <!-- send fake joint values -->
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher">
     <param name="use_gui" value="False"/>
   </node>
 
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher"/> -->
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+  <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
+      args="1 1 0.15 0 0 0 odom link_chassis 100"/>
 
   <!-- Show in Rviz   -->
-  <node name="rviz" pkg="rviz" type="rviz" />
+  <node name="rviz" pkg="rviz" type="rviz" args=" -d $(find maria_robot_description)/rviz/configuration.rviz"/>
 
 </launch>
