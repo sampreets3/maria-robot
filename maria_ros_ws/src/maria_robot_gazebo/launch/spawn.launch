@@ -1,0 +1,6 @@
+<launch>
+   <param name="robot_description" textfile="$(find maria_robot_description)urdf/simple_robot.urdf" />
+
+   <node name="robot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen"
+     args="-urdf -param robot_description -model simple_robot"/>
+</launch>
