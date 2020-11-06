@@ -28,11 +28,11 @@ Then onwards, most of the development will focus on the ROS side of things, like
 ## Updates
 
 [![ros-ws-update](https://img.shields.io/badge/ros-workspace-red.svg)](https://shields.io/)
-**Added three ROS packages to the main catkin workspace.** There are three main packages as of now: ![maria_robot_control](https://github.com/sampreets3/maria-robot/tree/master/maria_ros_ws/src/maria_robot_control), which will focus on the control of the differential drive robot, ![maria_robot_gazebo](https://github.com/sampreets3/maria-robot/tree/master/maria_ros_ws/src/maria_robot_gazebo)
-where all the files required for the Gazebo simulation will reside, and ![maria_robot_description](https://github.com/sampreets3/maria-robot/tree/master/maria_ros_ws/src/maria_robot_description) which will host all the CAD files for the chassis design and the corresponding URDF imports.
+**Added three ROS packages to the main catkin workspace.** There are three main packages as of now: [maria_robot_control](https://github.com/sampreets3/maria-robot/tree/master/maria_ros_ws/src/maria_robot_control), which will focus on the control of the differential drive robot, [maria_robot_gazebo](https://github.com/sampreets3/maria-robot/tree/master/maria_ros_ws/src/maria_robot_gazebo)
+where all the files required for the Gazebo simulation will reside, and [maria_robot_description](https://github.com/sampreets3/maria-robot/tree/master/maria_ros_ws/src/maria_robot_description) which will host all the CAD files for the chassis design and the corresponding URDF imports.
 
 [![support-schematic](https://img.shields.io/badge/schematic-support-blue.svg)](https://shields.io/)
-**Updated the Motor Controller Schematic.** Refined the design a little bit. The AMS1117 LDOs use the copper plane as a heatsink, as was pointed out by ![Mr. Petr Dvořák](https://www.linkedin.com/in/petr-dvorak-hw/). Thus, I created two copper planes, one for 3.3V and another for 5V, for the heat to dissipate. Also, I had overlooked the use of decoupling capacitors in the design. Added them close to the ICs.
+**Updated the Motor Controller Schematic.** Refined the design a little bit. The AMS1117 LDOs use the copper plane as a heatsink, as was pointed out by [Mr. Petr Dvořák](https://www.linkedin.com/in/petr-dvorak-hw/). Thus, I created two copper planes, one for 3.3V and another for 5V, for the heat to dissipate. Also, I had overlooked the use of decoupling capacitors in the design. Added them close to the ICs.
 
 [![support-schematic](https://img.shields.io/badge/schematic-support-blue.svg)](https://shields.io/)
 **Added schematics for STM32 base board.** This board is going to be responsible for processing sensor data, sending commands to the motor controller, and in later stages, communicating with the SBC running ROS. Need to finish the layout of the board.
