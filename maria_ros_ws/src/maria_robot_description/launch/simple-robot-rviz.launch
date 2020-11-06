@@ -4,10 +4,10 @@
   <param name="robot_description" textfile="$(find maria_robot_description)urdf/simple_robot.urdf" />
   <param name="use_gui" value="False"/>
 
-  <!-- Static tf for world frame -->
+  <!-- Static tf for world frame
   <node pkg="tf" type="static_transform_publisher" name="map_odom_broadcaster"
-      args="1 1 0.15 0 0 0 odom link_chassis 100"/> 
-
+      args="1 1 0.15 0 0 0 odom link_chassis 100"/>
+-->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
 
   <node name="joint_state_publisher_gui" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui">

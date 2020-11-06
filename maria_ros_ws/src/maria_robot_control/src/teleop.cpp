@@ -27,15 +27,21 @@ int main (int argc, char** argv) {
   tf::Transform transform;
   tf::Quaternion q;
 
+  double speed      = 2.0 ;
+  double radius     = 3.0 ;
+  double polarAngle = 0.0 ;
+
   while (ros::ok()){
     ros::spinOnce();
-        while(y != 10.0)
-        transform.setOrigin( tf::Vector3(0, y, 0) );
-        q.setRPY(0, 0, 0);
-        transform.setRotation(q);
-        br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "odom", "link_chassis"));
-        y+=dy;
-        ros::
+    currentTime = ros::Time::now() ;
+    ros::Duration timeElapsed = currentTime - prevTime ;
+    prevTime = currentTime ;
+    polarAngle += (speed/radius)*timeElapsed.toSec() ;
+
+    transform.setOrigin( tf::Vector3(radius*cos(polarAngle), radius*sin(polarAngle), 0) );
+    q.setRPY(0, 0, 0);
+    transform.setRotation(q);
+    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "odom", "link_chassis"));
   }
 
   return 0;
